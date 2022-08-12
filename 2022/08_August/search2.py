@@ -5,8 +5,8 @@ def getListOfFiles(dirName):
     listOfFile = os.listdir(dirName)
     allFiles = list()
     for item in listOfFile:
-        if re.search('^\.',item):
-            continue
+        if re.search('^\.|^djangorest',item):
+            continue #djangorest
         fullPath = os.path.join(dirName, item)
         if os.path.isdir(fullPath):
             allFiles = allFiles + getListOfFiles(fullPath)
@@ -20,7 +20,7 @@ def readfiles(fname):
     f=open(fname)
     temp= f.read()
     return temp
-    
+
 def isPresent(regex,string):
 	x=re.search(regex,string,re.IGNORECASE)
 	return x!=None
@@ -46,10 +46,8 @@ def main():
     print('Total file searched:',len(x))
     if count==0:
         print('No matching found')
-        choice = input('press enter to exit')
     elif count==1:
         print(readfiles(outcome[0]))
-        choice = input('press enter to exit')
     else:
         while(1):
             choice = int(input('enter an option number or 0 to quit:'))
