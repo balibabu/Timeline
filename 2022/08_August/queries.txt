@@ -1,0 +1,26 @@
+use s19410121182;
+show tables;
+insert into customer values('C01','A','B','C');
+select * from customer 
+inner join depositor on customer.cust_no=depositor.cust_no
+inner join account on depositor.account_no=account.account_no
+where customer.cust_no='c0001';
+
+select customer.*,account.* from customer inner join depositor on customer.cust_no=depositor.cust_no inner join account on depositor.account_no=account.account_no where customer.cust_no='c0001';
+
+-- join tables : using
+select * from customer
+inner join loan using(cust_no)
+where customer.cust_no='c0001';
+
+
+-- update money
+update account set balance=balance+500
+where account_no='a0001';
+
+
+
+
+
+
+
