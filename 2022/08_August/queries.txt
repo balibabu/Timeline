@@ -18,6 +18,9 @@ where customer.cust_no='c0001';
 update account set balance=balance+500
 where account_no='a0001';
 
+select balance from account where account_no='a0001';
+update customer set name='azb' where cust_no='c02';
+
 
 
 
