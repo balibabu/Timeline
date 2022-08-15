@@ -1,0 +1,16 @@
+use s19410121182;
+select * from customer order by name DESC;
+-- name with minimum and maximum lenght
+select min(LENGTH(name)) from customer;
+select max(LENGTH(name)) from customer;
+select * from customer where length(name)=(select min(LENGTH(name)) from customer); 
+select * from customer where length(name)=(select max(LENGTH(name)) from customer); 
+select * from customer where length(name) in ((select min(LENGTH(name)) from customer), (select max(LENGTH(name)) from customer)) order by name asc;  -- sorting
+
+-- grabbing only n rows
+select * from customer LIMIT 2;
+
+-- Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+-- get first letter of name and converting to lower
+select lower(left(name,1)) from customer;
+select name from customer where lower(left(name,1)) in ('a','e','i','o','u');
