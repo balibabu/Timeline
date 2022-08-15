@@ -1,0 +1,134 @@
+Skip to content
+Print out all keys and values from a Map in Java
+This post will discuss various methods to print out all keys and values from a map in Java.
+
+Related Posts:
+
+Iterate Map in Java using the entrySet() method
+
+Iterate Map in Java using keySet() method
+
+ 
+We know that the keySet() method returns a set view of the keys contained in the map and values() method returns a set view of the values contained in the map. So, we can use keySet() to print all keys present in the map and values() to print all values. There are several ways to do that:
+
+1. Using Iterator
+Map doesn’t have its own iterator since it doesn’t extend the Collection interface. Both keySet() and values() return set, and set extends the Collection interface, we can get an iterator.
+
+2. For-each loop
+For-each loop is available to any object implementing the Iterable interface. As Set extends Iterable interface, we can use a for-each loop to loop through the keySet and values.
+
+3. Java 8 – Iterator.forEachRemaining()
+The Iterator interface provides the forEachRemaining() method that can print each element until all elements have been processed.
+
+4. Java 8 – Stream.forEach()
+We can use a loop through the keySet and values by using the Stream.forEach() method to print each element of the stream.
+
+5. Using toString()
+For displaying all keys or values present on the map, we can simply print the string representation of keySet() and values(), respectively.
+
+ 
+Following is a simple Java program that prints all keys of a map using keySet() in Java:
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.stream.Stream;
+ 
+class Main
+{
+    // Program to print all keys present in the map using `keySet()` in Java
+    public static void main(String[] args)
+    {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "One");
+        map.put(2, "Two");
+ 
+        // 1. Using an iterator
+        Iterator<Integer> itr = map.keySet().iterator();
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+        }
+ 
+        // 2. For-each loop
+        for (Integer key: map.keySet()) {
+            System.out.println(key);
+        }
+ 
+        // 3. Java 8 – Collection.iterator() + Iterator.forEachRemaining()
+        map.keySet().iterator()
+                .forEachRemaining(System.out::println);
+ 
+        // 4. Java 8 – Collection.stream() + Stream.forEach()
+        map.keySet().stream()
+                .forEach(System.out::println);
+ 
+        // Java 8 – Stream.of() + Collection.toArray() + Stream.forEach()
+        Stream.of(map.keySet().toArray())
+                .forEach(System.out::println);
+ 
+        // 5. Convert to a string
+        System.out.println(map.keySet().toString());
+ 
+        // Java 8
+        Stream.of(map.keySet().toString())
+                .forEach(System.out::println);
+    }
+}
+Download  Run Code
+
+ 
+Similarly, the following Java program print all values of a map using values() in Java:
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.stream.Stream;
+ 
+class Main
+{
+    // Program to print all values in a map using `values()` in Java
+    public static void main(String[] args)
+    {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "One");
+        map.put(2, "Two");
+ 
+        // 1. Using an iterator
+        Iterator<String> itr = map.values().iterator();
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+        }
+ 
+        // 2. For-each loop
+        for (String key: map.values()) {
+            System.out.println(key);
+        }
+ 
+        // 3. Java 8 – Collection.iterator() + Iterator.forEachRemaining()
+        map.values().iterator()
+                .forEachRemaining(System.out::println);
+ 
+        // 4. Java 8 – Collection.stream() + Stream.forEach()
+        map.values().stream()
+                .forEach(System.out::println);
+ 
+        // Java 8 – Stream.of() + Collection.toArray() + Stream.forEach()
+        Stream.of(map.values().toArray())
+                .forEach(System.out::println);
+ 
+        // 5. Convert to a string
+        System.out.println(map.values().toString());
+ 
+        // Java 8
+        Stream.of(map.values().toString())
+                .forEach(System.out::println);
+    }
+}
+Download  Run Code
+
+That’s all about printing out all keys and values from a Map in Java.
+
+Rate this post
+
+Average rating 4.78/5. Vote count: 18
+

@@ -1,0 +1,2 @@
+Java One Line if Statement
+String distinction = marks > 70 ? "Yes" : "No";
