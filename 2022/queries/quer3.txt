@@ -1,0 +1,33 @@
+Example of MySQL CONCAT() function on columns
+The following MySQL statement will add values of pub_city column with values of the country column of publisher table placing a '-->' between them.
+add string
+
+select concat(name,'-->',roll) as name from student;
+
+Query the total population of all cities in CITY where District is California.sum,add
+select sum(population) from city where district='California';
+
+Query the average population for all cities in CITY, rounded down to the nearest integer.
+select round(sum(population)/count(name)) from city;
+
+Query the difference between the maximum and minimum populations in CITY.
+select max(population)-min(population) from city;
+
+Remove characters from string using TRIM()
+ REPLACE(columnName, 'charactersToBeReplaced', 'charactersToBeReplacedWith');
+
+replace, remove character, upper limit ,round,math, average
+select ceil(sum(salary)/count(id)-sum(replace(salary,'0',''))/count(id)) from employees;
+
+
+complex,
+select max(salary*months),count(employee_id) from Employee
+where (salary*months)=(select max(salary*months) from Employee );
+
+rounded to 2 decimal place
+select round(sum(lat_n),2) as lat,round(sum(long_w),2) as lon from station;
+
+Query the Manhattan Distance between points
+select round(abs(min(lat_n)-max(lat_n))+abs(min(long_w)-max(long_w)),4) from station;
+
+

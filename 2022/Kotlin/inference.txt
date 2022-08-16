@@ -1,0 +1,13 @@
+Please don't simply use Kotlin's powerful type inference feature for this.
+
+For example, write
+
+var age : Short = 25
+
+and not
+
+var age = 25
+
+even though both are correct. This is just for testing your understanding of the different basic data types.
+All of them should be "var", except for the pi value and 13.37, use "val" here.
+Try to use descriptive and useful names
