@@ -18,11 +18,11 @@ def knapsack(weight:list,value:list,W:int,n:int)->int:
         return array[W][n]
     
 
-weight=[7,9,5,12,14,6,12]
-profits=[3,4,2,6,7,3,5]
-maxWeight=15
+# weight=[7,9,5,12,14,6,12]
+# profits=[3,4,2,6,7,3,5]
+# maxWeight=15
 
-c=0
-array=[[-1 for _ in range(len(weight)+1)] for _ in range(maxWeight+1)]
-print(knapsack(weight,profits,maxWeight,len(weight)))
-print('no. of iterations',c)
+# c=0
+# array=[[-1 for _ in range(len(weight)+1)] for _ in range(maxWeight+1)]
+# print(knapsack(weight,profits,maxWeight,len(weight)))
+# print('no. of iterations',c)
