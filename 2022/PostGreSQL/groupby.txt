@@ -1,0 +1,19 @@
+select customer_id,count(amount),sum(amount),avg(amount) from payment
+group by customer_id,staff_id
+order by sum(amount) desc;
+
+select DATE(payment_date),sum(amount) from payment
+group by DATE(payment_date)
+order by sum(amount) desc;
+
+select staff_id,count(staff_id) from payment
+group by staff_id
+order by count(staff_id) desc;
+
+select rating, round(avg(replacement_cost),2) from film
+group by rating;
+
+select customer_id,sum(amount) from payment
+group by customer_id
+order by sum(amount) desc
+Limit 5;

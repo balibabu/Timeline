@@ -1,0 +1,12 @@
+select email from customer
+inner join address
+on address.address_id = customer.address_id
+where address.district='California';
+
+select title from film
+INNER join film_actor
+on film_actor.film_id = film.film_id
+inner join actor
+on actor.actor_id = film_actor.actor_id
+where actor.first_name='Nick'
+and actor.last_name='Wahlberg';
