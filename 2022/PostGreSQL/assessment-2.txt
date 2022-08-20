@@ -1,0 +1,71 @@
+select * from cd.facilities;
+
+select name,membercost from cd.facilities;
+
+select * from cd.facilities
+where membercost>0
+limit 5;
+
+select facid, name, membercost, monthlymaintenance
+from cd.facilities 
+where membercost!=0
+and membercost<monthlymaintenance/50;
+
+select * from cd.facilities
+where name ilike '%tennis%';
+
+select * from cd.facilities
+where facid in (1,5);
+
+select memid, surname, firstname, joindate 
+from cd.members
+where EXTRACT(MONTH from joindate)=9;
+
+select distinct(surname) from cd.members
+order by surname limit 10;
+
+select joindate from cd.members
+order by joindate DESC limit 1;
+
+select count(*) from cd.facilities
+where guestcost>=10;
+
+======================================
+select facid,sum(slots)
+from cd.bookings
+where extract(year from starttime)=2012 
+and extract(month from starttime)=9
+group by facid
+order by sum(slots)
+
+2nd solution
+where starttime >= '2012-09-01' and starttime <='2012-10-01'
+===============================
+
+select facid,sum(slots)
+from cd.bookings
+group by facid
+HAVING sum(slots)>1000
+ORDER by facid;
+
+======================================
+
+select starttime,name
+from cd.bookings 
+inner join cd.facilities 
+ON facilities.facid = bookings.facid
+where name ilike 'tennis court%'
+and EXTRACT(year from starttime)=2012
+and EXTRACT(month from starttime)=09
+and EXTRACT(day from starttime)=21
+order by starttime;
+
+2nd 
+and starttime >='2012-09-21' and starttime <='2012-09-22'
+======================================
+
+select starttime from cd.members
+inner join cd.bookings 
+ON bookings.memid = members.memid
+where surname='Farrell' 
+and firstname='David';

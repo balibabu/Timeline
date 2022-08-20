@@ -1,0 +1,12 @@
+insert into account(username,password,email,created_on) 
+VALUES
+('Jose','password','jose@mail.com',CURRENT_TIMESTAMP)
+
+insert into job(job_name) 
+VALUES
+('astronaut'),
+('pilot');
+
+insert into account_job(user_id,job_id,hire_date)
+VALUES
+(1,1,CURRENT_TIMESTAMP)

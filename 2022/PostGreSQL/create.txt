@@ -1,0 +1,21 @@
+create table account(
+	user_id serial primary key,
+	username varchar(50) UNIQUE not null,
+	password varchar(50) not null,
+	email VARCHAR(200) UNIQUE not null,
+	created_on TIMESTAMP not null,
+	last_login TIMESTAMP
+);
+
+CREATE TABLE job(
+	job_id serial PRIMARY KEY,
+	job_name varchar(200) unique not null
+);
+
+
+create TABLE account_job(
+	user_id Integer REFERENCES account(user_id),
+	job_id Integer REFERENCES job(job_id),
+	hire_date TIMESTAMP
+);
+

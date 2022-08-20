@@ -1,0 +1,8 @@
+alter table information
+rename to new_info
+
+alter table new_info
+rename column username to u_name;
+
+alter table new_info
+alter COLUMN email drop not null;

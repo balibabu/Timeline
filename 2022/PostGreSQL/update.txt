@@ -1,0 +1,11 @@
+UPDATE account
+set last_login=current_timestamp;
+
+update account_job
+set hire_date=account.created_on
+from account
+where account.user_id=account_job.user_id;
+
+UPDATE account
+set last_login=current_timestamp
+returning username,email,last_login;

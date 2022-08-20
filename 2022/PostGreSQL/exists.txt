@@ -1,0 +1,8 @@
+select first_name, last_name
+from customer as c
+where EXISTS 
+(SELECT * from payment as p
+where c.customer_id=p.customer_id
+ and amount>11
+);
+

@@ -1,0 +1,23 @@
+show all
+
+show Timezone
+
+current time stamp
+SELECT now()
+select timeofday()
+
+select CURRENT_TIME
+select CURRENT_DATE
+
+select EXTRACT( year from payment_date) as year
+from payment
+select EXTRACT( month from payment_date) as year
+from payment
+select EXTRACT( quarter from payment_date) as year
+from payment
+select age(payment_date)
+from payment
+select to_char(payment_date,'MONTH YYYY')
+from payment
+select to_char(payment_date,'MON/DD/YYYY')
+from payment

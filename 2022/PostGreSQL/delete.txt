@@ -1,0 +1,4 @@
+delete from job
+where job_name='cowboy'
+returning job_id,job_name;
+// returning only gives the affected rows
