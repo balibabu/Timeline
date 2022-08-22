@@ -1,0 +1,8 @@
+select cast ('5' as integer) as number
+select '5'::integer
+
+select char_length(cast(inventory_id as varchar))
+from rental;
+
+select char_length(inventory_id::varchar)
+from rental;

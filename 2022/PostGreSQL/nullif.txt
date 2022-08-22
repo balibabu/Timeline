@@ -1,0 +1,15 @@
+select nullif(10,10)
+select nullif(10,4)
+
+
+calculating ratio:
+select 
+(sum(case rating when 'R' then 1 else 0 end),
+sum(case rating when 'G' then 1 else 0 end))
+from film
+
+to avoid condition of division by zero we use nullif
+select 
+(sum(case  when rating='R' then 1 else 0 end)/
+nullif(sum(case  when rating='H' then 1 else 0 end)),0)
+from film

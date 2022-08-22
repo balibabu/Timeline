@@ -1,0 +1,34 @@
+CREATE TABLE Students(
+	student_id serial primary key,
+	first_name varchar(30),
+	last_name varchar(30),
+	homeroom_number smallint,
+	phone varchar(12) not null unique ,
+	email varchar(50)  unique,
+	graduation_year timestamp
+);
+
+
+CREATE TABLE Teachers(
+	teacher_id serial primary key,
+	first_name varchar(30),
+	last_name varchar(30),
+	homeroom_number smallint,
+	department varchar(30),
+	email varchar(50) unique,
+	phone varchar(12) unique not null
+);
+
+insert into students
+(student_id,first_name,last_name,phone,
+ graduation_year,homeroom_number) 
+VALUES
+(1,'Mark','Watney','777-555-1234','2035-1-1',5);
+
+insert into teachers
+(teacher_id,first_name,last_name,phone,
+ department,homeroom_number,email) 
+VALUES
+(1,'Jonas','Salk','777-555-4321',
+ 'Biology',5,'jsalk@school.org'
+);

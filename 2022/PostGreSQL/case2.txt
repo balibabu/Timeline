@@ -1,0 +1,43 @@
+select customer_id,
+CASE
+	when (customer_id<=100) THEN 'Premium'
+	when (customer_id between 100 and 200) THEN 'Plus'
+	ELSE 'Normal'
+END AS customer_class
+from customer;
+
+
+select customer_id,
+CASE customer_id
+	WHEN 2 THEN 'winner'
+	WHEN 5 THEN 'second place'
+	ELSE 'Normal'
+END AS raffle_result
+from customer;
+
+select rental_rate,
+case rental_rate
+	when 0.99 then 1
+	else 0
+END
+from film
+
+
+select 
+sum(case rental_rate
+	when 0.99 then 1
+	else 0
+END)
+from film
+
+
+select 
+sum(case rental_rate
+	when 0.99 then 1
+	else 0
+END) as bargain,
+sum(case rental_rate
+	when 2.99 then 1
+	else 0
+END) as premium
+from film
