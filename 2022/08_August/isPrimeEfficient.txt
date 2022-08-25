@@ -1,0 +1,5 @@
+is prime number
+-> to check if p is prime or not
+let n^2 >= p
+now we check if any primes less or equal to n divides p
+if divides p then not prime else prime

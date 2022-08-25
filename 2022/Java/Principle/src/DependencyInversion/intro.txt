@@ -1,0 +1,11 @@
+states:
+1. High-level modules should not depend on low-level modules.
+   Both should depend on abstraction
+   
+2. Abstraction should not depend on details. Details should 
+   depend on abstractions.
+   
+Dependency injection means passing all the parameters that are
+required by method.
+
+eg: see the image

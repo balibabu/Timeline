@@ -1,0 +1,12 @@
+states -> Objects should be replaceable with their sub-types without affecting the
+		  correctness of the program
+
+solutions:
+1. Break the hierarchy
+2. Tell, Don't ask
+
+for 1st eg: racing car should extends from Vehicle not Car, and Car extends Vehicle
+			ostrich should not extends from Bird, because it can't fly
+			
+for 2nd eg: We should not check the instance of object and then type cast 
+			into some other class objects

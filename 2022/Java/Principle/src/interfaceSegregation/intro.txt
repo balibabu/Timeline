@@ -1,0 +1,6 @@
+motto -> no client should be forced to depend on methods it does not use
+
+Technique to identify violation of ISP:
+-> Fat interfaces
+-> Interfaces with Low Cohesion
+-> Empty method implementation

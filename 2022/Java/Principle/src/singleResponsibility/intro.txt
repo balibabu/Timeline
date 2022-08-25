@@ -1,0 +1,8 @@
+here Single Responsibility means the given code should have only one reason to change
+
+eg: for student class : it should only changes for students information nothing else
+
+
+Aim for High Cohesion and Loose Coupling
+Cohesion is the degree to which the various parts of software component are related
+Coupling is defined as the level of inter dependency between various software components

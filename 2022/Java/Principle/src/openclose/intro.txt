@@ -1,0 +1,4 @@
+open for extension
+close for modification
+
+following OCP can leads to cost benefits
