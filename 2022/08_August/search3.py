@@ -3,7 +3,7 @@ import re
 import pyperclip
 
 def getListOfFiles(dirName):
-    fTypes=['java','py','c','txt','inpynb','cpp']
+    fTypes=['java','py','c','txt','ipynb','cpp']
     listOfFile = os.listdir(dirName)
     allFiles = list()
     for item in listOfFile:
