@@ -41,7 +41,6 @@ def insights(*args):
     print('Total file searched:',args[1])
     print('================================================\n')
 
-
 def showInNotePad(path):
     print(path)
     os.startfile(path, 'open')
