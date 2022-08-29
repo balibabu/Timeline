@@ -20,18 +20,20 @@ class Runner:
         count=0
         for i in Paths.filesList:
             try:
-                content=''
+                condition=False
                 if i[-3:]=='pdf':
                     if File.readPDF(i,regex):
-                        self.matchedFilesPath.append(i)
-                        count+=1
-                        print(count,'=>',Paths.shortPath(i))
+                        condition=True
+                elif i[-5:]=='ipynb':
+                    if File.readIpynb(i, regex): 
+                        condition=True
                 else:
-                    content=File.readFile(i)
-                    if File.isPresent(regex,content):
-                        self.matchedFilesPath.append(i)
-                        count+=1
-                        print(count,'=>',Paths.shortPath(i))
+                    if File.isPresent(regex,File.readFile(i)):
+                        condition=True
+                if condition:
+                    self.matchedFilesPath.append(i)
+                    count+=1
+                    print(count,'=>',Paths.shortPath(i))
             except:
                 pass
         File.insights(count,len(Paths.filesList))

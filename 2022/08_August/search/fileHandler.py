@@ -24,6 +24,20 @@ class File:
                 return True
         binaryFile.close()
         return False
+    
+    def readIpynb(filename,regex):
+        import codecs
+        import json
+        f = codecs.open(filename, 'r')
+        source = f.read()
+        y = json.loads(source)
+        pySource = '##Python .py code from .jpynb:\n'
+        for x in y['cells']:
+            for x2 in x['source']:
+                pySource = pySource + x2
+                if x2[-1] != '\n':
+                    pySource = pySource + '\n'
+        return re.search(regex,pySource,re.IGNORECASE)!=None
 
     def isPresent(key,content):
         x=re.search(key,content,re.IGNORECASE)
