@@ -25,10 +25,7 @@ class Customize:
             Customize.secretChamber()
 
     def secretChamber():
-        menu='''1. Search specific file type
-        2.Search all except ..file type
-        3.Add parent path
-        4.Remove all parent paths and add new one'''
+        menu='''1. Search specific file type\n2.Search all except ..file type\n3.Add parent path\n4.Remove all parent paths and add new one'''
         print(menu)
         choice=input('enter your choice:')
         if choice=='1':
