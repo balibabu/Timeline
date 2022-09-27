@@ -1,15 +1,22 @@
 @ECHO OFF
-ECHO ==== Timeline =====
+ECHO ====== SOA UNIVERSITY ======
 ECHO Auto pulling, adding, commiting and pushing on Github.
 ECHO ===================================================================================
-D:
-cd Works_Space\Timeline
+
+ECHO -------- Pulling --------
 git pull
 git status
+
+ECHO -------- Adding --------
 git add .
 git status
-git commit -m"auto uploaded by bat file"
+
+ECHO -------- Commiting --------
+git commit -m"updating timeline"
+
+ECHO -------- Pushing --------
 git push
+
 ECHO ===================================================================================
-ECHO Everything Done. Bye, Have a Good Day (•‿•)
+ECHO Don't Have a Good Day, Have a Great Day
 PAUSE
