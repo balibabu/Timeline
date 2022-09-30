@@ -26,8 +26,8 @@ def isPresent(regex,string):
 	return x!=None
 
 def main():
-    path1=r'D:\Works_Space\SOA_University'
-    path2=r'D:\Works_Space\Timeline'
+    path1=r'D:\WorkSpace\SOA_University'
+    path2=r'D:\WorkSpace\Timeline'
     x=getListOfFiles(path1)+getListOfFiles(path2)
 
     regex=input('enter keyword(regex) ')
