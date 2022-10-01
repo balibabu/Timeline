@@ -1,5 +1,5 @@
 @ECHO OFF
-ECHO ====== SOA UNIVERSITY ======
+ECHO ====== Timeline ======
 ECHO Auto pulling, adding, commiting and pushing on Github.
 ECHO ===================================================================================
 
