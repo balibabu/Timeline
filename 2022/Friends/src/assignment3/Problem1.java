@@ -2,6 +2,8 @@ package assignment3;
 
 import java.awt.Rectangle;
 
+import javax.swing.*;
+import javax.swing.GroupLayout.Group;
 import javax.swing.JFrame;
 
 public class Problem1 {
@@ -12,9 +14,19 @@ public class Problem1 {
 		window.setBounds(30, 30, 600, 600); 
 		
 		window.getContentPane().add(new MyCanvas());
+		
+		
+				
 
 		window.setVisible(true); 
 		System.out.println("i'm done");
+//		Rectangle rect=new Rectangle();
+//		rect.height=100;
+//		rect.width=200;
+//		rect.x=10;
+//		rect.y=10;
+//		Group root = new Group();   
+//	    root.getChildren().add(rect);
 	}
 
 }
