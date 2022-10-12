@@ -6,4 +6,5 @@
  *
  */
 module Rajshree {
+	requires java.sql;
 }
