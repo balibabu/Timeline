@@ -13,14 +13,15 @@ public class Database {
 		Connection con = DriverManager.getConnection(url, uname, password);
 		st = con.createStatement();
 	}
-	public void create_table() {
+	public void create_table() throws SQLException {
 		String query="create table Book(Book_id serial primary key, Title varchar(100), Author varchar(100), Genre varchar(100), Height int, Publisher varchar(100))";
-		System.out.println(query);
+		st.execute(query);
 	}
 	public void add_row(String[] cols) throws SQLException {
 		String query="INSERT into book(Title,Author,Genre,Height,Publisher) values(\"%s\",\"%s\",\"%s\",%s,\"%s\")".formatted(cols[0], cols[1],cols[2], cols[3],cols[4]);
-		st.executeUpdate(query);
+//		st.executeUpdate(query);
 		System.out.println(query);
+			
 	}
 	public void add_multiple_row(ArrayList<String[]> rows) {
 		for(String[] row:rows) {
@@ -31,4 +32,5 @@ public class Database {
 			}
 		}
 	}
+	
 }

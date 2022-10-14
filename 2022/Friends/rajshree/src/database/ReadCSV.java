@@ -15,6 +15,7 @@ public class ReadCSV {
 	}
 	public ArrayList<String[]> read(String filePath) throws FileNotFoundException {
 		Scanner sc=new Scanner(new File(filePath));
+		sc.nextLine();
 		ArrayList<String[]> rows=new ArrayList<String[]>();
 		while(sc.hasNext()) {
 			String[] row=sc.nextLine().split(delimeter);
