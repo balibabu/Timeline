@@ -25,3 +25,21 @@ public class ReadCSV {
 		return rows;
 	}
 }
+
+/*
+	public void storeBooks() throws FileNotFoundException {
+		System.out.println("Enter datafile name");
+		String filename = sc.next();
+		File file = new File(filename);
+		Scanner rows = new Scanner(file);
+		while (rows.hasNextLine()) {
+			String data = rows.nextLine();
+			Book b = getBook(data);
+			if (b != null) {
+				bookList.add(b);
+			}
+
+		}
+		rows.close();
+	}
+*/
