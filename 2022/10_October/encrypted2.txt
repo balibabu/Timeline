@@ -1,0 +1,27 @@
+   1  2  3  4  5  6  7  8  9  0  1  2  3  4  5  6  7  8  9  0  1  
+1  b  S  3  [  m  E  0  '  j  F  8  @  j  N  4  +  b  H  8  -  l  1
+2  T  1  .  e  F  7  {  b  P  8  "  r  D  8  &  o  C  4  +  x  O  2
+3  7  #  q  P  1  (  a  P  6  }  g  I  5  =  a  Y  3  >  e  C  7  3
+4  [  z  P  5  }  i  L  8  -  o  A  9  {  e  N  6  *  u  H  9  [  4
+5  m  E  7  ^  b  W  2  :  w  H  1  @  w  Z  7  ^  x  S  6  >  c  5
+6  U  1  !  l  P  7  >  k  V  5  $  t  Z  7  |  i  D  1  '  p  J  6
+7  0  _  e  L  0  [  c  I  4  )  w  F  3  {  y  U  9  $  r  G  1  7
+8  #  f  B  2  .  e  M  4  [  h  M  4  ]  l  C  2  @  b  X  7  _  8
+9  u  U  5  ?  t  E  8  #  j  M  4  (  y  B  4  &  b  A  0  .  r  9
+0  L  0  .  o  O  7  <  p  W  8  !  u  L  2  |  f  C  5  :  w  L  0
+1  8  )  h  H  9  )  i  P  3  -  i  C  3  ^  u  I  5  }  u  C  5  1
+2  "  u  H  1  |  g  J  0  |  k  E  4  *  e  Q  4  !  b  Q  9  {  2
+3  n  T  0  ?  h  V  8  $  h  D  3  @  c  W  6  }  r  Z  7  "  l  3
+4  O  4  .  j  V  5  ,  w  R  1  ,  z  U  2  ^  t  T  1  =  g  L  4
+5  0  #  e  A  8  _  h  F  7  '  m  S  4  [  k  E  6  ?  i  A  1  5
+6  &  y  S  7  ,  o  V  0  -  e  L  3  ^  h  Q  6  )  g  H  0  *  6
+7  l  F  6  ]  j  V  4  !  n  T  8  |  k  O  5  ^  n  V  3  _  f  7
+8  H  5  {  r  T  9  #  m  U  9  :  r  K  3  &  o  W  0  <  b  U  8
+9  8  .  h  V  2  >  t  C  8  *  t  I  9  -  s  V  9  #  v  W  3  9
+0  .  o  C  8  *  u  Z  2  [  e  H  4  =  n  O  4  *  x  C  8  =  0
+1  u  S  1  _  z  Y  1  ,  z  B  8  _  z  N  0  <  j  G  1  {  m  1
+2  O  4  :  c  L  0  @  z  D  7  |  o  C  4  !  a  P  5  ?  j  O  2
+3  0  $  g  Z  6  .  q  R  1  )  a  M  7  :  g  V  8  @  d  F  2  3
+4  (  j  P  0  )  l  P  5  ?  q  F  1  $  g  L  5  -  c  Y  0  ?  4
+5  l  D  2  )  b  I  6  =  g  Z  3  &  q  N  0  !  v  M  4  _  s  5
+   1  2  3  4  5  6  7  8  9  0  1  2  3  4  5  6  7  8  9  0  1  
