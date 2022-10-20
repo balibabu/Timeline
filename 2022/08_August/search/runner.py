@@ -50,6 +50,8 @@ class Runner:
         count=self.match(regex)
         if count==0:
             print('No matching found')
+            print('there can be problem with file type or parent path')
+            input('press any key to exit') # just to wait to show message in console #it useless ignore it
         elif count==1:
             File.openInApp(self.matchedFilesPath[0])
         else:
