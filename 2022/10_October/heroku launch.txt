@@ -1,0 +1,9 @@
+heroku login
+heroku create
+add Procfile
+add .gitignore
+add, commit
+git push heroku master
+
+
+==> get the url
