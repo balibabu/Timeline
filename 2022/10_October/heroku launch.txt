@@ -3,7 +3,11 @@ heroku create
 add Procfile
 add .gitignore
 add, commit
-git push heroku master
+git push heroku master  /// or git push heroku HEAD:master
 
 
 ==> get the url
+
+
+todo list mine
+https://floating-ocean-67736.herokuapp.com/
