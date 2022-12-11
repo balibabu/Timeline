@@ -95,7 +95,7 @@ public class TestMyCircularLinkedList {
             System.out.printf("Test %d successful\n", ++testNumber);
         }
         try {
-            list.removeLast();
+            list.removeFirst();
             throw new RuntimeException("removeLast() failed to throw exception on empty list");
         }
         catch (NoSuchElementException ex) {

@@ -2,139 +2,213 @@ package assignment7;
 
 import java.util.Iterator;
 
-public class MyCircularLinkedList<E>  implements MyList<E>{
+class Node<E> {
+	E data;
+	Node<E> next;
+}
 
-	public void add(String string) {
-		
-	}
+public class MyCircularLinkedList<E> implements MyList<E> {
 
-	public void add(int i, String string) {
+	Node<E> head = null;
+
+	@Override
+	public void add(int index, E e) {
 		// TODO Auto-generated method stub
-		
+		Node<E> node = new Node();
+		node.data = e;
+		node.next = null;
+		if (size() == 0 || index == 0) {
+			addFirst(e);
+		} else if (size() <= index) {
+			addLast(e);
+		} else {
+			int c = 1;
+			Node<E> temp = head;
+			while (temp.next != null) {
+				if (index == c) {
+					Node<E> temp2 = temp.next;
+					temp.next = node;
+					node.next = temp2;
+					break;
+				}
+				temp = temp.next;
+				c++;
+			}
+		}
 	}
 
-	public void addLast(String string) {
-		// TODO Auto-generated method stub
-		
+	public void showAll() {
+		Node<E> temp = head;
+		while (temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
 	}
 
-	public void remove(int i) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public void clear() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public boolean contains(String string) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public void get(int i) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void getFirst() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void getLast() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void removeFirst() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void removeLast() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public int indexOf(String string) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public int lastIndexOf(String string) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public void addFirst(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void set(int i, String string) {
-		// TODO Auto-generated method stub
-		
+		int c=0;
+		Node<E> temp = head;
+		while (temp != null) {
+			c++;
+			temp=temp.next;
+		}
+		return c;
 	}
 
 	@Override
 	public boolean contains(Object o) {
-		// TODO Auto-generated method stub
+		Node<E> temp = head;
+		while (temp != null) {
+			if (temp.data == o) {
+				return true;
+			}
+			temp = temp.next;
+		}
 		return false;
 	}
 
 	@Override
 	public Iterator<E> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Iterator<E>() {
+
+			Node current = head;
+
+			@Override
+			public boolean hasNext() {
+				return current != null;
+			}
+
+			@Override
+			public E next() {
+				if (hasNext()) {
+					E data = (E) current.data;
+					current = current.next;
+					return data;
+				}
+				return null;
+			}
+
+			@Override
+			public void remove() {
+				throw new UnsupportedOperationException("Remove not implemented.");
+			}
+
+		};
 	}
 
 	@Override
-	public void add(int index, E e) {
-		// TODO Auto-generated method stub
-		
+	public void clear() {
+		head = null;
+
+	}
+
+	@Override
+	public E get(int index) {
+		int c = 0;
+		Node<E> temp = head;
+		while (temp != null) {
+			if (c == index) {
+				return temp.data;
+			}
+			temp = temp.next;
+			c++;
+		}
+		return null;
 	}
 
 	@Override
 	public int indexOf(Object e) {
-		// TODO Auto-generated method stub
-		return 0;
+		int c = 0;
+		Node<E> temp = head;
+		while (temp != null) {
+			if (temp.data == e) {
+				return c;
+			}
+			temp = temp.next;
+			c++;
+		}
+		return c;
 	}
 
 	@Override
 	public int lastIndexOf(E e) {
-		// TODO Auto-generated method stub
-		return 0;
+		int c = 0;
+		int index = 0;
+		Node<E> temp = head;
+		while (temp != null) {
+			if (temp.data == e) {
+				index = c;
+			}
+			temp = temp.next;
+			c++;
+		}
+		return index;
 	}
 
 	@Override
-	public E set(int index, E e) {
-		// TODO Auto-generated method stub
+	public E remove(int index) {
+		if (index == 0) {
+			removeFirst();
+		} else {
+			int c = 1;
+			Node<E> temp = head;
+			while (temp.next != null) {
+				if (index == c) {
+					temp.next = temp.next.next;
+					break;
+				}
+				temp = temp.next;
+				c++;
+			}
+		}
 		return null;
 	}
 
 	@Override
-	public void add(int index, E e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int lastIndexOf(E e) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
 	public E set(int index, E e) {
-		// TODO Auto-generated method stub
+		add(index, e);
 		return null;
+	}
+
+	public void addLast(E e) {
+		Node<E> temp = head;
+		while (temp.next != null) {
+			temp = temp.next;
+		}
+		Node<E> node = new Node();
+		node.data = e;
+		node.next = null;
+		temp.next = node;
+	}
+
+	public E getFirst() {
+		// TODO Auto-generated method stub
+		return head.data;
+
+	}
+
+	public E getLast() {
+		// TODO Auto-generated method stub
+		Node<E> temp = head;
+		while (temp.next != null) {
+			temp = temp.next;
+		}
+		return temp.data;
+	}
+
+	public void removeFirst() {
+		// TODO Auto-generated method stub
+		head = head.next;
+
+	}
+
+	public void addFirst(E e) {
+		Node<E> node = new Node();
+		node.data = e;
+		node.next = head;
+		head = node;
+
 	}
 
 }
