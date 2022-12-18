@@ -22,20 +22,20 @@ public class WebServiceConfig {
 		messageDispatcherServlet.setTransformWsdlLocations(true);
 		return new ServletRegistrationBean(messageDispatcherServlet, "/ws/*");
 	}
-	
-	@Bean(name="courses")
+
+	@Bean(name = "courses")
 	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema coursesSchema) {
-		DefaultWsdl11Definition definition=new DefaultWsdl11Definition();
+		DefaultWsdl11Definition definition = new DefaultWsdl11Definition();
 		definition.setPortTypeName("CoursePort");
 		definition.setTargetNamespace("http://in28minutes.com/courses");
 		definition.setLocationUri("/ws");
 		definition.setSchema(coursesSchema);
 		return definition;
 	}
-	
-	
+
 	@Bean
 	public XsdSchema courSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("course-details.xsd"));
 	}
+
 }
