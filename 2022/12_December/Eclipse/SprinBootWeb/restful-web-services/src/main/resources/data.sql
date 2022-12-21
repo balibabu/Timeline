@@ -1,0 +1,1 @@
+insert into user_details(id,birthDate,name) values(10001,current_date(),'Bali');

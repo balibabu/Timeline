@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.jpa.hibernet.course.jpa.CourseJpaRepo;
+import com.jpa.hibernet.course.springdatajpa.CourseSpringDataJpaRepo;
 
 @Component
 public class CourseCommandLineRunner implements CommandLineRunner {
@@ -12,17 +13,22 @@ public class CourseCommandLineRunner implements CommandLineRunner {
 //	@Autowired
 //	private CourseJdbcRepo repository;
 	
+//	@Autowired
+//	private CourseJpaRepo repository;
+	
 	@Autowired
-	private CourseJpaRepo repository;
+	private CourseSpringDataJpaRepo repository;
 
 	@Override
 	public void run(String... args) throws Exception {	
-		repository.insert(new Course(1,"Learn Spring","by Bali"));
-		repository.insert(new Course(2,"Learn AWS","by Bali"));
-		repository.insert(new Course(3,"Learn AZURE","by Bali"));
+		repository.save(new Course(1,"Learn Spring","Bali"));
+		repository.save(new Course(2,"Learn AWS","Bali"));
+		repository.save(new Course(3,"Learn AZURE","Bali"));
 		
-		repository.deleteById(1);
-		System.out.println(repository.findById(2));
+		repository.deleteById(1l);
+		System.out.println(repository.findById(2l));
+		System.out.println(repository.findByAuthor("Bali"));
+		System.out.println(repository.findByName("Learn AWS"));
 	}
 
 }
