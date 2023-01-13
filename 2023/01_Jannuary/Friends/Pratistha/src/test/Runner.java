@@ -11,7 +11,6 @@ public class Runner {
 		System.out.println("Overloaded: "+str1);
 	}
 	public static void main(String str1,String str2) {
-		System.out.println("Overloaded: "+str1);
 		System.out.println("Overloaded: "+str1+" & "+str2);
 	}
 }
