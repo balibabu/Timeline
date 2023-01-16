@@ -1,9 +1,13 @@
 import React from 'react'
+import ControlledComponent from './ControlledComponent';
 import Mailbox from './Mailbox';
 
 function App2() {
   return (
-    <div><Mailbox/></div>
+    <div>
+      <ControlledComponent />
+      <Mailbox />
+    </div>
   )
 }
 

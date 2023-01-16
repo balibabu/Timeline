@@ -1,0 +1,15 @@
+-> componentDidMount() method runs after the component output has been rendered
+
+-> When you call setState(), React merges the object you provide into the current state. (only in class component)
+
+-> Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity
+
+->Keys used within arrays should be unique among their siblings,they don’t need to be globally unique
+
+->In React, mutable state is typically kept in the state property of components, and only updated with setState()
+
+->We can combine the two by making the React state be the “single source of truth”is called a “controlled componen
+
+-> uncontrolled component in React : The file input Tag
+
+-> We know that props are read-only
