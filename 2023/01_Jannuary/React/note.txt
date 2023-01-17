@@ -13,3 +13,12 @@
 -> uncontrolled component in React : The file input Tag
 
 -> We know that props are read-only
+
+Error boundaries do not catch errors for:
+
+Event handlers (learn more)
+Asynchronous code (e.g. setTimeout or requestAnimationFrame callbacks)
+Server side rendering
+Errors thrown in the error boundary itself (rather than its children)
+
+A class component becomes an error boundary if it defines either (or both) of the lifecycle methods static getDerivedStateFromError() or componentDidCatch()
