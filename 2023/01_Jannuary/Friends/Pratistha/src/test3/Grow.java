@@ -6,8 +6,21 @@ public class Grow {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		String[] str=sc.nextLine().split(" ");
-		System.out.println(str);
+		String[] input=sc.nextLine().split(" ");
+		Growing num=new GrowingNumber();
+		Growing str=new GrowingString();
+		if(num.isGrowing(input[0])) {
+			System.out.println("Growing number");
+		}else {
+			System.out.println("Not growing number in the first line");
+		}
+		
+		if(str.isGrowing(input[1])) {
+			System.out.println("Growing string");
+		}else {
+			System.out.println("Not growing string in the second line");
+		}
+		
 	}
 	public static boolean isGrowing(String str) {
 		for(int i=0;i<str.length()-1;i++) {
@@ -25,7 +38,7 @@ interface Growing {
 	public boolean isGrowing(String str);
 }
 
-class GrowNumber implements Growing{
+class GrowingNumber implements Growing{
 	@Override
 	public boolean isGrowing(String str) {
 		for(int i=0;i<str.length()-1;i++) {
