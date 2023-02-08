@@ -9,10 +9,6 @@ public class Person {
 		this.birthYear = birthYear;
 	}
 	
-	@Override
-	public String toString() {
-		return "Person [name=" + name + ", birthYear=" + birthYear + "]";
-	}
 
 	public String getName() {
 		return name;
@@ -30,4 +26,8 @@ public class Person {
 		this.birthYear = birthYear;
 	}
 	
+	@Override
+	public String toString() {
+		return "Name : "+name+"\nBirthYear : "+birthYear+"\n";
+	}
 }

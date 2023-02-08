@@ -14,13 +14,13 @@ public class Student extends Person {
 
 	@Override
 	public String toString() {
-		return "Student [department=" + department + ", attendancePercentage=" + attendancePercentage + "]";
+		return super.toString()+"Department : " + department + "\nEligible : " + isEligible() + "\n";
 	}
 
 
-	public boolean isEligible() {
+	public String isEligible() {
 		if(attendancePercentage>=75)
-			return true;
-		return false;
+			return "Yes";
+		return "No";
 	}
 }

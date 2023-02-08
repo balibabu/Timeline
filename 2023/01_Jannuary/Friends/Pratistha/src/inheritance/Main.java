@@ -15,14 +15,15 @@ public class Main {
 			int attendancePercentage=sc.nextInt();
 			person=new Student(name,birthYear,department,attendancePercentage);
 		}else if(code==2) {
-			int salary=sc.nextInt();
 			String subject=sc.next();
 			int resultPercentage=sc.nextInt();
+			int salary=sc.nextInt();
 			person=new TeachingStaff(name, birthYear, salary, subject, resultPercentage);
 		}else if(code==3) {
-			int salary=sc.nextInt();
-			String lab=sc.next();
+			sc.nextLine();
+			String lab=sc.nextLine();
 			int experience=sc.nextInt();
+			int salary=sc.nextInt();
 			person=new NonTeachingStaff(name, birthYear, salary, lab, experience);
 		}
 		System.out.println(person);

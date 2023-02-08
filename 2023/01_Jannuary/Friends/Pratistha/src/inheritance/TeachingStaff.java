@@ -8,11 +8,11 @@ public class TeachingStaff extends Staff{
 		this.subject = subject;
 		this.resultPercentage = resultPercentage;
 	}
+	public double getSalary() {
+		return super.getSalary()+super.getSalary()*resultPercentage/1000;
+	}
 	@Override
 	public String toString() {
-		return "TeachingStaff [subject=" + subject + ", resultPercentage=" + resultPercentage + "]";
-	}
-	public int getSalary() {
-		return super.getSalary()+super.getSalary()*resultPercentage/1000;
+		return super.toString()+"Subject : " + subject + "\nNew Salary : " + getSalary() + "\n";
 	}
 }

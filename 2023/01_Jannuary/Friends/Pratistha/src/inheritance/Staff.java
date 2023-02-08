@@ -1,7 +1,7 @@
 package inheritance;
 
 public class Staff extends Person{
-	private int salary;
+	private double salary;
 
 	public Staff(String name, int birthYear, int salary) {
 		super(name, birthYear);
@@ -9,7 +9,7 @@ public class Staff extends Person{
 	}
 
 	
-	public int getSalary() {
+	public double getSalary() {
 		return salary;
 	}
 
@@ -21,7 +21,7 @@ public class Staff extends Person{
 
 	@Override
 	public String toString() {
-		return "Staff [salary=" + salary + "]";
+		return super.toString()+"Old Salary : " + salary + "\n";
 	}
 
 

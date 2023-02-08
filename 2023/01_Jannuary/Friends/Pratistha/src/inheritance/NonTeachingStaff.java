@@ -8,11 +8,11 @@ public class NonTeachingStaff extends Staff{
 		this.lab = lab;
 		this.experience = experience;
 	}
+	public double getSalary() {
+		return super.getSalary()+super.getSalary()*experience/100;
+	}
 	@Override
 	public String toString() {
-		return "NonTeachingStaff [lab=" + lab + ", experience=" + experience + "]";
-	}
-	public int getSalary() {
-		return super.getSalary()+super.getSalary()*experience/100;
+		return super.toString()+"Lab : " + lab + "\nNew Salary : " + getSalary() + "\n";
 	}
 }
