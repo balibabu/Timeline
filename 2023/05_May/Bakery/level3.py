@@ -1,32 +1,49 @@
-def composed1(array,i,amt,list1):
-    if amt==0: return True 
-    elif i==len(array): return False
+def removeValue(num,nums,startPos):
+    while startPos in nums.keys():
+        if num in nums[startPos]:
+            nums[startPos].remove(num)
+            return
+        startPos+=1
 
-    if amt>=array[i]:
-        taken=composed1(array,i+1,amt-array[i],list1)
-        notTaken=composed1(array,i+1,amt,list1)
-        if taken: list1.append(i)
-        return taken or notTaken
-    else:
-        return False
+def find_combination(target, nums):
+    def backtrack(start, curr_sum, path):
+        if curr_sum == target:
+            return path[:]
+        if curr_sum > target or len(path) >= 4:
+            return None
+
+        for i in range(start, len(nums)):
+            path.append(i)
+            result = backtrack(i + 1, curr_sum + nums[i], path)
+            if result:
+                return result
+            path.pop()
+
+    return backtrack(0, 0, [])
+
 
 
 data=input().split()
-amount=[]
-payment=[]
+earning={}
+payment=dict()
 for i in range(0,len(data),3):
-    geld=(data[i+1],data[i+2])
+    date=int(data[i+1])
+    geld=int(data[i+2])
     if data[i]=='F':
-        amount.append(geld)
+        earning[date]=geld
     else:
-        payment.append(geld)
+        if date not in payment.keys(): payment[date]=[geld]
+        else: payment[date].append(geld)
 
-array=[int(j) for i,j in payment]
-for i,j in amount:
-    indexes=[]
-    composed1(array,0,int(j),indexes)
-    if 0<len(indexes)<=4:
-        for index in indexes:
-            array.pop(index)
+for i in earning:
+    eligibleList=[]
+    j=i
+    while j in payment.keys():
+        eligibleList+=payment[j]
+        j+=1
+    pos=find_combination(earning[i],eligibleList)
+    if pos:
+        for p in pos:
+            removeValue(eligibleList[p],payment,i)
     else:
         print(i,end=' ')
