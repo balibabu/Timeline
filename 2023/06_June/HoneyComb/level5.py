@@ -47,12 +47,17 @@ def method1(mat,neibors):
         mat[x]=''.join(chars)
 
 def method2(mat,hive,wasp,edges,barrier):
+    freeNebors=hive.freeNeibors(*wasp)
     blocker=[]
-    while barrier>0 and escape(hive,wasp,edges,blocker) :
-        if not blocker: return
-        method1(mat,blocker[-1])
+    while escape(hive,wasp,edges,blocker) and barrier!=0:
         barrier-=1
-        # blocker=[]
+        for point in blocker:
+            fN=hive.freeNeibors(*point)
+            nebors=set(fN).difference(set(freeNebors))
+            if len(nebors)==1:
+                method1(mat,[point])
+                break
+        blocker=[]
 
 def applyBarrier(mat,barrier):
     hive=Hive(mat)
@@ -83,15 +88,16 @@ def escape(hive,wasp,edges,blocker,neibors=[]):
     
     for nebor in new_nebors:
         if escape(hive,nebor,edges,blocker,neibors+new_nebors):
-            if len(new_nebors)==1: blocker.append(new_nebors)
+            blocker.insert(0,nebor)
             return True
     return False
         
-data=open('level5/level5_2.in')
+data=open('level5/level5_example.in')
 lines=data.read().split('\n\n')
 
 str1=lines[0]+'\n\n'
 for i in range(int(lines[0])):
+    # print(i+1)
     que1=lines[i+1]
     mat=que1.strip().split('\n')
     noBariers=int(mat[0])
