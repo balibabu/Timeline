@@ -13,7 +13,7 @@ class Hive:
         return None
 
     def getNeibors(self,i,j):
-        neibors=[(i-1,j-1),(i+1,j-1),(i-1,j+1),(i+1,j+1),(i,j-2),(i,j+2)]
+        neibors=[(i,j-2),(i-1,j-1),(i-1,j+1),(i,j+2),(i+1,j+1),(i+1,j-1)]
         i=0
         while i<len(neibors):
             x,y=neibors[i]
@@ -34,35 +34,84 @@ class Hive:
         edges=[]
         for i in range(0,self.cols,2):
             edges.append((0,i))
-            edges.append((self.rows-1,i+1))
+            edges.append((self.rows-1,i+(self.rows-1)%2))
         for i in range(1,self.rows-1):
             edges.append((i,int(i%2==1)))
             edges.append((i,self.cols-int(i%2==0)-1))
         return edges
                 
+def escape(hive,wasp,edges,paths,path=[],oldNebors=[]):
+    if wasp in edges: 
+        paths.append(path[:])
+        return True
+
+    nebors=hive.freeNeibors(*wasp)
+    new_nebors=[x for x in nebors if x not in oldNebors]
+    
+    for nebor in new_nebors:
+        path.append(nebor)
+        escape(hive,nebor,edges,paths,path,oldNebors+new_nebors)
+        path.pop()
+    return False
+        
+def isUniquePath(path1,path2):
+    for step in path1:
+        if step in path2:
+            return False
+    return True
+
+def getUniquePaths(paths):
+    paths=sorted(paths, key=len)
+    uniPaths=[paths[0]]
+    for path in paths:
+        c=0
+        for uniPath in uniPaths:
+            if not isUniquePath(uniPath,path): 
+                c=1
+                break
+        if c==0:
+            uniPaths.append(path)
+    return uniPaths
+
+def blockPath(mat,i,j):
+    chars=[ch for ch in mat[i]]
+    chars[j]='X'
+    mat[i]=''.join(chars)
+
+def getCommonPoint(path,paths):
+    commonStep=None
+    for step in path:
+        c=0
+        for path in paths:
+            if step not in path:
+                c=1
+                break
+        if c==0:
+            commonStep=step 
+            break
+    return commonStep
+
+def getGroup(mainPaths,paths):
+    group=[]
+    for mPath in mainPaths:
+        group1=[]
+        for path in paths:
+            if getCommonPoint(mPath,[path])!=None:
+                group1.append(path)
+        group.append(group1)
+    return group
+
 def method1(mat,neibors):
     for x,y in neibors:
         chars=[i for i in mat[x]]
         chars[y]='X'
         mat[x]=''.join(chars)
 
-def method2(mat,hive,wasp,edges,barrier):
-    freeNebors=hive.freeNeibors(*wasp)
-    blocker=[]
-    while escape(hive,wasp,edges,blocker) and barrier!=0:
-        barrier-=1
-        for point in blocker:
-            fN=hive.freeNeibors(*point)
-            nebors=set(fN).difference(set(freeNebors))
-            if len(nebors)==1:
-                method1(mat,[point])
-                break
-        blocker=[]
-
 def applyBarrier(mat,barrier):
     hive=Hive(mat)
     wasp=hive.getWaspPosition()
     fNebors=hive.freeNeibors(*wasp)
+    edges=hive.getEdges()
 
     if len(fNebors)==barrier:
         method1(mat,fNebors)
@@ -76,28 +125,24 @@ def applyBarrier(mat,barrier):
     barrier-=len(edgeNeibors)
     method1(mat,edgeNeibors)
     if barrier==0: return
-    method2(mat,hive,wasp,edges,barrier)
 
-def escape(hive,wasp,edges,blocker,neibors=[]):
-    if wasp in edges: return True
-    nebors=hive.freeNeibors(*wasp)
-    new_nebors=[]
-    for nebor in nebors:
-        if nebor not in neibors: 
-            new_nebors.append(nebor)
-    
-    for nebor in new_nebors:
-        if escape(hive,nebor,edges,blocker,neibors+new_nebors):
-            blocker.insert(0,nebor)
-            return True
-    return False
-        
-data=open('level5/level5_example.in')
+
+    paths=[]
+    escape(hive,wasp,edges,paths)
+    uniPaths=getUniquePaths(paths)
+    gp=getGroup(uniPaths,paths)
+
+    for i in range(len(uniPaths)):
+        point=getCommonPoint(uniPaths[i],gp[i])
+        if point:
+            blockPath(mat,*point)
+
+
+data=open('level5/level5_3.in')
 lines=data.read().split('\n\n')
 
 str1=lines[0]+'\n\n'
 for i in range(int(lines[0])):
-    # print(i+1)
     que1=lines[i+1]
     mat=que1.strip().split('\n')
     noBariers=int(mat[0])
