@@ -1,37 +1,31 @@
-level 1 qn. no.: 3 barrier: 2
-X   X   O   X   O   X   X   O   X   X   
-  X   X   O   O   X   X   X   W   X   X 
-O   O   O   O   X   X   X   O   O   X   
-  X   O   O   X   O   O   O   X   X   X 
-O   X   X   X   X   O   O   O   X   X   
-  X   X   O   O   O   X   X   X   X   O 
-O   X   O   O   O   X   X   X   O   X   
-  O   O   X   O   X   O   X   X   O   X 
+l3 qn. no.: 12 barrier: 5
+X   X   O   O   X   O   O   X   X   O   
+  O   X   O   X   O   W   O   X   O   O 
+O   O   O   O   O   O   O   O   O   X   
+  O   O   O   O   O   O   X   O   O   O 
+O   X   X   O   O   X   O   X   O   O   
+  O   O   O   O   X   X   X   O   O   X 
+X   X   O   O   O   O   X   O   X   O   
+  X   O   O   O   X   O   O   O   O   O 
+X   O   O   O   O   O   O   X   X   O   
+  O   X   O   O   O   O   O   X   O   O 
+O   X   X   O   X   O   X   O   O   X   
+  O   O   O   O   X   O   O   O   X   O 
+no. of x: 36
 
-level 2
-qn. no.: 6 barrier: 3
-X   X   O   X   O   O   O   X   O   O   O   O   O   X   O   O   
-  O   O   X   X   X   X   O   O   X   X   O   O   X   O   O   O 
-X   O   O   O   O   O   X   X   W   O   X   O   O   O   O   O   
-  O   O   X   X   X   O   O   O   O   X   X   X   O   X   O   O 
+l4 qn. no.: 41 barrier: 2
+O   X   O   X   O   O   X   O   X   O   O   X   
+  O   X   X   X   X   O   O   O   X   X   O   X 
+X   X   X   X   X   X   X   O   O   X   O   O   
+  O   O   X   O   X   O   O   O   O   O   O   O 
+X   X   O   O   X   O   X   X   O   O   O   O   
+  X   O   X   X   O   O   X   X   O   X   X   X 
+O   X   O   X   O   O   W   X   X   X   O   X   
+  O   X   X   O   O   O   O   X   X   X   X   X 
+X   X   O   O   X   O   O   O   X   X   X   O   
+  X   X   O   O   X   X   O   X   X   X   X   O 
+X   X   O   X   O   O   X   O   X   O   X   O   
+  X   O   X   O   X   X   X   X   O   X   O   X 
+no. of x: 76
 
-qn. no.: 9 barrier: 2
-O   O   O   O   X   O   O   O   O   O   O   O   O   O   O   O   
-  X   X   X   X   O   X   W   X   X   O   X   O   X   X   O   O 
-O   O   X   O   O   O   X   O   X   O   O   X   X   O   X   X   
-  X   X   X   X   O   O   X   X   O   X   X   X   X   O   X   X
-
-level 3
-qn. no.: 3 barrier: 3
-O   O   O   X   X   X   X   X   X   X   
-  O   X   O   O   O   O   O   X   X   O 
-O   O   O   O   O   O   X   O   X   O   
-  O   X   X   X   O   O   X   O   O   O 
-O   X   O   X   O   X   O   X   X   X   
-  X   O   O   O   X   O   X   X   O   O 
-O   X   O   X   X   X   X   O   O   X   
-  O   O   O   X   X   O   O   X   O   O 
-X   X   X   O   X   X   X   X   O   X   
-  O   O   O   X   O   O   X   O   W   X 
-O   O   O   O   X   X   X   X   O   O   
-  X   X   O   O   X   O   O   O   X   X
+l5 [466 394 377 358 320 133 122]
