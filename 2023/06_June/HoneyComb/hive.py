@@ -30,6 +30,13 @@ class Hive:
             if self.hive[x][y]=='O': fNeibors.append((x,y))
         return fNeibors
 
+    def blockedNeibors(self,i,j):
+        neibors=self.getNeibors(i,j)
+        fNeibors=[]
+        for x,y in neibors:
+            if self.hive[x][y]=='X': fNeibors.append((x,y))
+        return fNeibors
+
     def getEdges(self):
         edges=[]
         for i in range(0,self.cols,2):
