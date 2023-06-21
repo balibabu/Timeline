@@ -29,3 +29,5 @@ taskId minuteId power minuteId2 power2
 3       7       4       9         1
 4       7       1
 5       5       4
+
+1       6       4       6         1      9       1 (invalid because of same two minuteId)
