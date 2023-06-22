@@ -46,3 +46,36 @@ class Hive:
             edges.append((i,int(i%2==1)))
             edges.append((i,self.cols-int(i%2==0)-1))
         return edges
+
+    def getAllDirectionsPoints(self,x,y):
+        nw=[]
+        i=1
+        while True:
+            if (x-i)<0 or (y-i)<0 : break
+            nw.append((x-i,y-i))
+            i+=1
+        print(nw)
+
+        ne=[]
+        i=1
+        while True:
+            if (x-i)<0 or (y+i)==self.cols : break
+            ne.append((x-i,y+i))
+            i+=1
+        print(ne)
+
+        es=[]
+        i=1
+        while True:
+            if (x+i)==self.rows or (y+i)==self.cols : break
+            es.append((x+i,y+i))
+            i+=1
+        print(es)
+
+        sw=[]
+        i=1
+        while True:
+            if (x+i)==self.rows or (y-i)<0 : break
+            sw.append((x+i,y-i))
+            i+=1
+        print(sw)

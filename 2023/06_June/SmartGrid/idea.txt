@@ -1,0 +1,2 @@
+only go to next task if max bill is full their need
+otherwise minimise the cost then go to next task
