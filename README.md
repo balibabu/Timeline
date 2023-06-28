@@ -1,3 +1,3 @@
 # Timeline
 
-## Sorry The from 2023 the years are independent repos
+## Sorry, from 2023 the years repos are managed  independently
